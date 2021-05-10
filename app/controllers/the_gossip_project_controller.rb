@@ -10,7 +10,7 @@ class TheGossipProjectController < ApplicationController
 
   def gossip
     @gossip = Gossip.find(params[:gossip_id])
-    puts params
+    puts 
   end
 
 end

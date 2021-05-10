@@ -39,13 +39,12 @@
 <% @titre = []  %> 
 <% @contenu = []%> 
 
-<% for i in 0..gossips.length%>
-<% titre = gossips[i].title%>
-<% contenu = gossips[i].content%>
+<% for i in 0..gossips.length
+   titre = gossips[i].title
+   contenu = gossips[i].content %>
+<p> <%= "#{titre}"%> </p>
+<p> <%= "#{contenu}"%> </p>
 <%end%>
-
-<p> <%= "#{titre}"%> </p
-
 
 </body>
 </html>
