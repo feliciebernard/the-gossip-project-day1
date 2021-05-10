@@ -27,7 +27,7 @@ nb_user.times do |x|
 		description: Faker::Food.description,
 		email: Faker::Internet.email,
 		age: rand(16..100),
-		city_id: cities[rand(0..nb_city-1)].id)
+		city_id: cities[].id)
 	users << user
  	puts "Seeding user nb#{x}"
 end

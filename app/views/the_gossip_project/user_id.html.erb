@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+
+
+<h1 class="text-center p-3"> Salut à toi potineur n°<%= params[:user_id]%> !</h1>
+
+<h1 class="text-center p-3"> Voici tes informations personnelles ultra secrètes </h1>
+
+
+<% user = Gossip.all[params[:user_id].to_i].user %>
+
+
+<pre>
+Nom : <%= user.first_name %>
+Prénom : <%= user.last_name %>
+Description : <%= user.description %>
+Age : <%= user.age %>
+City : <%= user.city.name %>
+</pre>
+
+</body>
+
+</html>
+
+
+

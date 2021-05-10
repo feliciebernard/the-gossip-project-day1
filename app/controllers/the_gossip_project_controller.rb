@@ -1,4 +1,8 @@
 class TheGossipProjectController < ApplicationController
+  def index
+
+  end
+
   def team
   end
 
@@ -10,7 +14,9 @@ class TheGossipProjectController < ApplicationController
 
   def gossip
     @gossip = Gossip.find(params[:gossip_id])
-    puts 
   end
-
+  
+  def user_id
+    @user = User.find(params[:user_id])
+  end 
 end

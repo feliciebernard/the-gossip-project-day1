@@ -22,32 +22,28 @@
    <ul class="navbar-nav mr-auto">
      <li class="nav-item active">
         
-        <li class="nav-item"><%= link_to "Team", the_gossip_project_team_path, class: "nav-link"%></li>
-        <li class="nav-item"><%= link_to "Contact", the_gossip_project_contact_path, class:"nav-link" %></li>
+        <li class="nav-item"><%= link_to "Team", team_path, class: "nav-link"%></li>
+        <li class="nav-item"><%= link_to "Contact", contact_path, class:"nav-link" %></li>
      </li>
    </ul>
  </div>
 </nav>
 
+<h1 class="text-center p-3"> Salut à toi <%= params[:potineur]%> !</h1>
 
+<h1 class="text-center p-3"> Voici la liste des potins, rattachés à leur auteur : </h1>
 
-<h1> Bonjour à toi <%= "#{params[:first_name]}"%> </h1>
+<% for i in 0..Gossip.count - 1 %>
 
-<p> Voici la liste des potins : </p>
+<p> <%= Gossip.all[i].user.first_name%>  <%= Gossip.all[i].user.last_name%> a écrit le gossip suivant : Titre : " <%= Gossip.all[i].title%> "; Contenue : " <%= Gossip.all[i].content%> "</p>
 
-
-<% @titre = []  %> 
-<% @contenu = []%> 
-
-<% for i in 0..gossips.length
-   titre = gossips[i].title
-   contenu = gossips[i].content %>
-<p> <%= "#{titre}"%> </p>
-<p> <%= "#{contenu}"%> </p>
 <%end%>
-
 </body>
+
 </html>
+
+
+
 
 
 
