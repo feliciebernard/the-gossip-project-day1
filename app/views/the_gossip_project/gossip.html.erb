@@ -21,9 +21,9 @@
  <div class="collapse navbar-collapse" id="navbarSupportedContent">
    <ul class="navbar-nav mr-auto">
      <li class="nav-item active">
-        <li class="nav-item"><%= link_to "Accueil", index_path, class:"nav-link"%></li>
+        <li class="nav-item"><%= link_to "Accueil", index_path, class:"btn btn-primary"%></li>
         <li class="nav-item"><%= link_to "Team", team_path, class: "nav-link"%></li>
-        <li class="nav-item"><%= link_to "Contact", contact_path, class:"nav-link active" %></li>
+        <li class="nav-item"><%= link_to "Contact", contact_path, class:"nav-link" %></li>
      </li>
    </ul>
  </div>
@@ -35,7 +35,7 @@
     <h5 class="card-title"><%= Gossip.find(params[:gossip_id]).title%></h5>
     <h3 class="card-title"></h3>
     <p class="card-text","><%= Gossip.find(params[:gossip_id]).content%> </p>
-    <%= link_to "#{Gossip.find(params[:gossip_id]).user.first_name} #{Gossip.find(params[:gossip_id]).user.last_name}", "/#{Gossip.find(params[:gossip_id].to_i).user.id}",class:"btn btn-primary" %>
+    <%= link_to "#{Gossip.find(params[:gossip_id]).user.first_name} #{Gossip.find(params[:gossip_id]).user.last_name}", "/#{Gossip.find(params[:gossip_id].to_i).user.id}",class:"btn btn-primary d-flex justify-content-center" %>
    </div>
     </div>
 </div>
