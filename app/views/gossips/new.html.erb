@@ -21,23 +21,32 @@
  <div class="collapse navbar-collapse" id="navbarSupportedContent">
    <ul class="navbar-nav mr-auto">
      <li class="nav-item active">
-        <li class="nav-item"><%= link_to "Accueil", root_path, class:"btn btn-primary"%></li>
+        <li class="nav-item"><%= link_to "Accueil", gossips_path, class:"btn btn-primary"%></li>
         <li class="nav-item"><%= link_to "Team", team_path, class: "nav-link"%></li>
         <li class="nav-item"><%= link_to "Contact", contact_path, class:"nav-link" %></li>
      </li>
    </ul>
  </div>
 </nav>
-<h1 class="d-flex justify-content-center">Voici la page du Gossip n°<%= params[:gossip_id]%> !</h1><br>
-<div class="row justify-content-center">
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title"><%= @gossip.title%></h5>
-    <h3 class="card-title"></h3>
-    <p class="card-text","><%= @gossip.content%> </p>
-    <%= link_to "#{@gossip.user.first_name} #{@gossip.user.last_name}", user_id_path(@gossip.user_id),class:"btn btn-primary d-flex justify-content-center" %>
-   </div>
-    </div>
-</div>
+    <%= form_tag url_for(action: 'create'), method: "post" do %>
+
+      <%= label_tag 'Title' %>
+      <%= text_field_tag 'title', @gossips.title %>
+      <br /> <br />
+
+      <%= label_tag 'Content' %>
+      <%= text_area_tag 'content', @gossips.content %>
+      <br /> <br />
+      <%= submit_tag "Create Post" %>
+     <% if @gossips.errors.any? %>
+    <p>Nous n'avons pas réussi à créer le potin pour la (ou les) raison(s) suivante(s) :</p>
+      <ul>
+    <% @gossips.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+    <% end %>
+    <% end %>
+</form>
 </body>
 </html>

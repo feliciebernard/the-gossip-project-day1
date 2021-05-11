@@ -21,31 +21,24 @@
  <div class="collapse navbar-collapse" id="navbarSupportedContent">
    <ul class="navbar-nav mr-auto">
      <li class="nav-item active">
-        <li class="nav-item"><%= link_to "Accueil", root_path, class:"btn btn-primary"%></li>
+        <li class="nav-item"><%= link_to "Accueil", gossips_path, class:"btn btn-primary"%></li>
         <li class="nav-item"><%= link_to "Team", team_path, class: "nav-link"%></li>
         <li class="nav-item"><%= link_to "Contact", contact_path, class:"nav-link" %></li>
      </li>
    </ul>
  </div>
 </nav>
- <%= link_to "clique ici" %>
-<table>
-  <thead>
-      <tr>
-        <th>Author</th>
-        <th>Title</th>
-      </tr>
-  </thead>
-  <tbody>
-  <%Gossip.all.each do |gossip|%>
-    <tr>
-      <td> <%= link_to gossip.user.first_name + ' ' + gossip.user.last_name , gossip_path(gossip.id)%></td> 
-        <td><%= gossip.title %></td>
-    </tr>
-    <% end %>
-  </tbody>
+<h1 class="d-flex justify-content-center">Voici la page du Gossip n°<%= params[:id]%> !</h1><br>
+<div class="row justify-content-center">
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= @gossips.title%></h5>
+    <h3 class="card-title"></h3>
+    <p class="card-text","><%= @gossips.content%> </p>
+    <button class="btn btn-primary d-flex justify-content-center" >
+    <%= ""%></button>
+   </div>
+    </div>
+</div>
 </body>
 </html>
-
-
-<!-- >
