@@ -3,20 +3,17 @@ class TheGossipProjectController < ApplicationController
 
   end
 
-  def team
-  end
+ # def team end
 
-  def contact
-  end
+  #def contact end
 
-  def welcome
-    end
+  #def welcomeend
 
   def gossip
     @gossip = Gossip.find(params[:gossip_id])
   end
   
-  def user_id
+  def user
     @user = User.find(params[:user_id])
   end 
 end

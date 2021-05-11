@@ -21,7 +21,7 @@
  <div class="collapse navbar-collapse" id="navbarSupportedContent">
    <ul class="navbar-nav mr-auto">
      <li class="nav-item active">
-        <li class="nav-item"><%= link_to "Accueil", index_path, class:"btn btn-primary"%></li>
+        <li class="nav-item"><%= link_to "Accueil", root_path, class:"btn btn-primary"%></li>
         <li class="nav-item"><%= link_to "Team", team_path, class: "nav-link"%></li>
         <li class="nav-item"><%= link_to "Contact", contact_path, class:"nav-link" %></li>
      </li>
@@ -34,15 +34,14 @@
 <h1 class="text-center p-3"> Voici tes informations personnelles ultra secrètes </h1>
 
 
-<% user = Gossip.all[params[:user_id].to_i].user %>
 
 
 <pre>
-Nom : <%= user.first_name %>
-Prénom : <%= user.last_name %>
-Description : <%= user.description %>
-Age : <%= user.age %>
-City : <%= user.city.name %>
+Nom : <%= @user.first_name %>
+Prénom : <%= @user.last_name %>
+Description : <%= @user.description %>
+Age : <%= @user.age %>
+City : <%= @user.city.name %>
 </pre>
 
 </body>
